@@ -9,7 +9,7 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const postRoutes = require("./routes/posts");
+
 
 
 const { application } = require("express");
@@ -51,7 +51,6 @@ app.use(
 
 
 //Use flash messages for errors, info, ect...
-app.use(isLoggedIn);
 app.use(flash());
 
 
