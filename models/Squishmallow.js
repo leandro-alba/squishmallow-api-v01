@@ -26,19 +26,26 @@ const SquishmallowSchema = new mongoose.Schema({
   },
   collectorNumber:{ 
     type: Number,
-    required: true,
+    
+  },
+  squad:{ 
+    type: String,
+    
   },
   releaseDate:{ 
-    type: Number,
-    required: true,
+    type: String,
+    
   },
   bio: {
     type: String,
-    require: true,
+    
+  },
+  appearance:{
+    type: String,
   },
   thankyous: {//this will be for thanking outside squish fans for adding to the database, its will be their reddit username or whatever username they want 
     type: String,
-    require: true,
+   
   },
   createdAt: {
     type: Date,

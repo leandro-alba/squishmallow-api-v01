@@ -1,0 +1,83 @@
+<%- include('partials/header') -%>
+
+
+<main class="container p-5">
+    <div class="row">
+        <div class="col-lg-2"></div>   
+        <div class="col-lg-8 ">
+          <div class="card text-bg-light shadow">
+            <div class="card-body">
+              <div class="mt-5">
+                <h2 class="text-center">Add Squishmallow to mongoDB</h2>
+                <form action="/admin/addSquish" method="POST">
+                  <div class="mb-3">
+                      <label for="name" class="form-label">name:</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="type" class="form-label">type:</label>
+                    <input type="text" class="form-control" id="type" name="type">
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-label">color:</label>
+                        <input type="text" class="form-control" id="color" name="color">
+                    </div>
+                    <div class="mb-3">
+                        <label for="size" class="form-label">size:</label>
+                        <input type="text" class="form-control" id="size" name="size">
+                    </div>
+                    <div class="mb-3">
+                        <label for="collectorNumber" class="form-label">collector number:</label>
+                        <input type="text" class="form-control" id="collectorNumber" name="collectorNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="squad" class="form-label">squad:</label>
+                        <input type="text" class="form-control" id="squad" name="squad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="releaseDate" class="form-label">release date: (mm/dd/yyyy)</label>
+                        <input type="text" class="form-control" id="releaseDate" name="releaseDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bio" class="form-label">bio:</label>
+                        <textarea class="form-control" id="bio" name="bio"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="appearance" class="form-label">appearance:</label>
+                        <textarea class="form-control" id="appearance" name="appearance"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="thankyous" class="form-label">thank yous: add the username of who ever added a squish</label>
+                        <input type="text" class="form-control" id="thankyous" name="thankyous">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">image link:</label>
+                        <input type="text" class="form-control" id="image" name="image">
+                    </div>
+                  <button type="submit" class="btn btn-success position-relative top-0" value="Upload">Submit</button> 
+                  <!-- <hr> -->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>   
+    </div>
+</main>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js" integrity="sha512-Ooi9IbjM2SIDjQ02ENbPFuuORT8F8Rc+rowcYfLneDwKRxw1+gVVj5tciVmV/APnA/Ys+qy1MbNKK3k2EaAHcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+       
+        CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+        CKEDITOR.replace('bioX', {
+            plugins:'wysiwygarea, toolbar, basicstyles, link'
+        });
+        CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+        CKEDITOR.replace('appearanceX', {
+            plugins:'wysiwygarea, toolbar, basicstyles, link'
+        })
+        
+    </script>
+<%- include('partials/footer') -%>
