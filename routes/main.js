@@ -15,6 +15,6 @@ router.get('/admin', homeController.getAdmin);
 router.get('/api/:id', homeController.getApiById)//works perfectly
 router.get('/api/:name', homeController.getApiName)
 router.get('/api', homeController.getApi)//get all squishes lmao
-
+//get random squishes here. 5 limit
 
 module.exports = router;

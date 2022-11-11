@@ -27,11 +27,13 @@ module.exports = {
     getApiName: async (req,res) => {
       try{
         //const squish = await Squishmallow.find({name :req.body.name})
-        const squish = await Squishmallow.find(req.params.name)
+        //const squish = await Squishmallow.findById(req.params.id)
+        const squish = await Squishmallow.find().populate('name')
+        const squishName = req.params.name
         //console.log(req.params.name)
-        res.json(squish)
+        res.json(squish[squishName])
       }catch(err){
-        console.log(err)
+        res.status(500).json({message: err.message})
       }
     },
     getApiById: async (req,res) => {

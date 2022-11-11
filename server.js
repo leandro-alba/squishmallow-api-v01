@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
+const cors = require('cors')// important for all APIs! removes the, 'blocked by CORS policy' 
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
@@ -18,8 +18,6 @@ const { application } = require("express");
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
-
-
 //Connect To Database
 connectDB();
 
@@ -29,6 +27,8 @@ app.set("view engine", "ejs");
 //Static Folder
 app.use(express.static("public"));
 
+//Cors
+app.use(cors());
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
