@@ -26,13 +26,16 @@ module.exports = {
     },
     getApiName: async (req,res) => {
       try{
-        //const squish = await Squishmallow.find({name :req.body.name})
-        //const squishId = await Squishmallow.findById(req.params.id)
-        //const squish = await Squishmallow.find().populate('name')
-        let name = req.params.name
-        const squish = await Squishmallow.findOne({name: name})
-        console.log(req.params.name)
-        res.json(squish)
+        let name = req.params.name.toLowerCase()
+        if(name === 'ace'){
+          const squish = await Squishmallow.findById('63668435570a999f14ee2297')//works but this requires hardcoding the id string, will keep an eye out for a more efficent way to do this. Happy I found a solution after searching for a while lol. asked on discord for help.
+          res.json(squish)
+        }else if(name === 'connor'){
+          const squish = await Squishmallow.findById('636680a5570a999f14ee2295')
+          res.json(squish)
+        }else if(name === 'aldron'){
+          const squish = await Squishmallow.findById('636c0a703f4fc63328abdd31')
+        }else{ res.json('squish not found 😵‍💫') }
       }catch(err){
         res.status(500).json({message: err.message})
       }
@@ -45,6 +48,16 @@ module.exports = {
         res.json(squish)
       }catch(err){
         console.log(err)
+      }
+    },
+    getApiRandom: async (req,res) => {
+      try{
+        const ids = ['636c0a703f4fc63328abdd31','636680a5570a999f14ee2295','63668435570a999f14ee2297']
+        const getRandomizedIndex = Math.floor(Math.random()* 3)//this works, tested in the console, returns a random whole integar
+        const squish = await Squishmallow.findById('636c0a703f4fc63328abdd31')//doesnt work... 
+        res.json(squish)
+      }catch(err){
+        res.status(500).json({message: err.message})
       }
     }
   };
