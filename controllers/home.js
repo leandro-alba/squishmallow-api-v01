@@ -18,7 +18,7 @@ module.exports = {
     },
     getApi: async (req,res) => {//works!
       try{
-        const squishes = await Squishmallow.find()
+        const squishes = await Squishmallow.find().limit(5)
         res.json(squishes)
       }catch(err){
         res.status(500).json({message: err.message})// 500 = server side error 
@@ -36,6 +36,8 @@ module.exports = {
         }else if(name === 'aldron'){
           const squish = await Squishmallow.findById('636c0a703f4fc63328abdd31')
         }else{ res.json('squish not found 😵‍💫') }
+        //const squish = await Squishmallow.findOne({ "name": { $all: `${name}`}}) //code given to me by fellow 100dev alumi
+        res.json(squish)
       }catch(err){
         res.status(500).json({message: err.message})
       }
@@ -54,7 +56,7 @@ module.exports = {
       try{
         const ids = ['636c0a703f4fc63328abdd31','636680a5570a999f14ee2295','63668435570a999f14ee2297']
         const getRandomizedIndex = Math.floor(Math.random()* 3)//this works, tested in the console, returns a random whole integar
-        const squish = await Squishmallow.findById('636c0a703f4fc63328abdd31')//doesnt work... 
+        const squish = await Squishmallow.findById(ids[getRandomizedIndex])//WORKS!
         res.json(squish)
       }catch(err){
         res.status(500).json({message: err.message})

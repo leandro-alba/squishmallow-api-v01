@@ -51,6 +51,9 @@ const SquishmallowSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  // creators: [{//hopefully this will 
+  //   type: String
+  // }]
 });
 
 module.exports = mongoose.model("Squishmallow", SquishmallowSchema);//mongo will name my collection squishmallows, by default, saving me time by not having to add a collection name 
