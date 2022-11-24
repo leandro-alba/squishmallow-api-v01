@@ -34,6 +34,7 @@ module.exports = {
         name: req.body.name,//comes from the form
         image: req.body.image,
         type: req.body.type,
+        breed: req.body.breed,
         color: req.body.type,
         size: req.body.size,
         collectorNumber: req.body.collectorNumber,
@@ -42,6 +43,7 @@ module.exports = {
         bio: req.body.bio,
         appearance: req.body.appearance,
         thankyous: req.body.thankyous,
+        seenOn: req.body.seenOn,
       });
       console.log("Squish has been added!");
       res.redirect("/admin");

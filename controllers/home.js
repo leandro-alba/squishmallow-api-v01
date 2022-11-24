@@ -18,10 +18,11 @@ module.exports = {
     },
     getApi: async (req,res) => {//works!
       try{
-        const squishes = await Squishmallow.find().limit(5)
+        const squishes = await Squishmallow.find()//.limit(5) will get back 5 of oldest created objs
         res.json(squishes)
       }catch(err){
-        res.status(500).json({message: err.message})// 500 = server side error 
+        console.log(err)
+        //res.status(500).json({message: err.message})// 500 = server side error 
       }
     },
     getApiName: async (req,res) => {
@@ -35,11 +36,26 @@ module.exports = {
           res.json(squish)
         }else if(name === 'aldron'){
           const squish = await Squishmallow.findById('636c0a703f4fc63328abdd31')
+          res.json(squish)
+        }else if(name === 'marshina'){
+          const squish = await Squishmallow.findById('637e3aa9dfa690d9b54aac8a')
+          res.json(squish)
+        }else if(name === 'carol'){
+          const squish = await Squishmallow.findById('637e3d002b36213a05b68ce9')
+          res.json(squish)
+        }else if(name === 'patty'){
+          const squish = await Squishmallow.findById('637fd04f29ffa74ee54dd1fe')
+          res.json(squish)
+        }
+        else if(name === 'reshma'){
+          const squish = await Squishmallow.findById('637fd3789c3d44c20503a39f')
+          res.json(squish)
         }else{ res.json('squish not found 😵‍💫') }
         //const squish = await Squishmallow.findOne({ "name": { $all: `${name}`}}) //code given to me by fellow 100dev alumi
         res.json(squish)
       }catch(err){
-        res.status(500).json({message: err.message})
+        console.log(err)
+        //res.status(500).json({message: err.message})
       }
     },
     getApiById: async (req,res) => {
@@ -59,7 +75,8 @@ module.exports = {
         const squish = await Squishmallow.findById(ids[getRandomizedIndex])//WORKS!
         res.json(squish)
       }catch(err){
-        res.status(500).json({message: err.message})
+        console.log(err)
+        //res.status(500).json({message: err.message})
       }
     }
   };
