@@ -46,11 +46,14 @@ module.exports = {
         }else if(name === 'patty'){
           const squish = await Squishmallow.findById('637fd04f29ffa74ee54dd1fe')
           res.json(squish)
-        }
-        else if(name === 'reshma'){
+        }else if(name === 'reshma'){
           const squish = await Squishmallow.findById('637fd3789c3d44c20503a39f')
           res.json(squish)
-        }else{ res.json('squish not found 😵‍💫') }
+        }else{ 
+          //res.json('squish not found 😵‍💫')
+          const squish = await Squishmallow.findById('637539c1dab1d74aee65a168')//so when someone types the name wrong or enters a squish not in the database, api res with unknown squish
+          res.json(squish) 
+        }
         //const squish = await Squishmallow.findOne({ "name": { $all: `${name}`}}) //code given to me by fellow 100dev alumi
         res.json(squish)
       }catch(err){
