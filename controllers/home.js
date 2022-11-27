@@ -49,6 +49,9 @@ module.exports = {
         }else if(name === 'reshma'){
           const squish = await Squishmallow.findById('637fd3789c3d44c20503a39f')
           res.json(squish)
+        }else if(name === 'chanel'){
+          const squish = await Squishmallow.findById('6382400de396d84f2018ad07')
+          res.json(squish)
         }else{ 
           //res.json('squish not found 😵‍💫')
           const squish = await Squishmallow.findById('637539c1dab1d74aee65a168')//so when someone types the name wrong or enters a squish not in the database, api res with unknown squish
@@ -73,8 +76,8 @@ module.exports = {
     },
     getApiRandom: async (req,res) => {
       try{
-        const ids = ['636c0a703f4fc63328abdd31','636680a5570a999f14ee2295','63668435570a999f14ee2297']
-        const getRandomizedIndex = Math.floor(Math.random()* 3)//this works, tested in the console, returns a random whole integar
+        const ids = ['636c0a703f4fc63328abdd31','636680a5570a999f14ee2295','63668435570a999f14ee2297','637fd3789c3d44c20503a39f','637fd04f29ffa74ee54dd1fe','637e3d002b36213a05b68ce9','637e3aa9dfa690d9b54aac8a',]
+        const getRandomizedIndex = Math.floor(Math.random()* ids.length)//this works, tested in the console, returns a random whole integar
         const squish = await Squishmallow.findById(ids[getRandomizedIndex])//WORKS!
         res.json(squish)
       }catch(err){

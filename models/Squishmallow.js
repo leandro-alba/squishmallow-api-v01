@@ -53,9 +53,15 @@ const SquishmallowSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  seenOn: [{//hopefully this will work
+  seenOn: [{
     type: String,
     required: false
+  }],
+  variants: [{
+    otherName: {type: String, required: false},
+    img: {type: String, required: false},
+    notableChanges: {type: String, required: false},
+    collectionSquad: {type: String, required: false},
   }]
 });
 
