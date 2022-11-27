@@ -9,7 +9,7 @@ const SquishmallowSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  breed:{//pig,cow,cat...
+  brand:{//pig,cow,cat...
     type: String,
     required: true
   },

@@ -34,7 +34,7 @@ module.exports = {
         name: req.body.name,//comes from the form
         image: req.body.image,
         type: req.body.type,
-        breed: req.body.breed,
+        brand: req.body.brand,
         color: req.body.type,
         size: req.body.size,
         collectorNumber: req.body.collectorNumber,
