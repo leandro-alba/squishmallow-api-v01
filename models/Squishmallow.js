@@ -58,11 +58,11 @@ const SquishmallowSchema = new mongoose.Schema({
     required: false
   }],
   variants: [{
-    otherName: {type: String, required: false},
+    otherName: {type: String, required: false},//adding brackets to these makes multiple submissions works but it comes out not the way we want.
     img: {type: String, required: false},
     notableChanges: {type: String, required: false},
     collectionSquad: {type: String, required: false},
-  }]
+  }]//this works with square brackets but can only accept one object in the array
 });
 
 module.exports = mongoose.model("Squishmallow", SquishmallowSchema);//mongo will name my collection squishmallows, by default, saving me time by not having to add a collection name 
