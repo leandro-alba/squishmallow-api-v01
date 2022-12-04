@@ -49,7 +49,7 @@ module.exports = {
           img: req.body.img,
           notableChanges: req.body.notableChanges,
           collectionSquad: req.body.collectionSquad,
-        }]//it worked with square brackets, so if it doesnt work today, thats why
+        }]
       });
       console.log("Squish has been added!");
       res.redirect("/admin");

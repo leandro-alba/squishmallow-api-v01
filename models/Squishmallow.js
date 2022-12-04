@@ -58,10 +58,14 @@ const SquishmallowSchema = new mongoose.Schema({
     required: false
   }],
   variants: [{
-    otherName: {type: String, required: false},//adding brackets to these makes multiple submissions works but it comes out not the way we want.
-    img: {type: String, required: false},
-    notableChanges: {type: String, required: false},
-    collectionSquad: {type: String, required: false},
+    //otherName: {type: String, required: false},//adding brackets to these makes multiple submissions works but it comes out not the way we want.
+    // img: {type: String, required: false},
+    // notableChanges: {type: String, required: false},
+    // collectionSquad: {type: String, required: false},
+    otherName: String, // new havent tried yet, got from mongoose docs
+    img: String,
+    notableChanges: String,
+    collectionSquad: String
   }]//this works with square brackets but can only accept one object in the array
 });
 
